@@ -21,32 +21,7 @@
           - links
           - parallel
           - htop
-
-    - name: Install apt repository stuff
-      package:
-        name:
-          - apt-transport-https
-          - ca-certificates
-          - curl
-          - gnupg
-
-    - name: Add the Docker GPG key
-      apt_key:
-        url: https://download.docker.com/linux/ubuntu/gpg
-        state: present
-
-    - name: Add the apt repository for Docker
-      apt_repository:
-        repo: deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu groovy stable
-        state: present
-        filename: docker
-
-    - name: Install Docker
-      package:
-        name:
-          - docker-ce
-          - docker-ce-cli
-          - containerd.io
+      become: false
 
     - name: Install Docker-compose
       get_url:
@@ -54,7 +29,7 @@
         dest: /usr/local/bin/docker-compose
         mode: '0755'
         owner: root
-        group: root
+        group: wheel
 
     - name: Install Ansible Molecule
       pip:
@@ -65,52 +40,41 @@
         name:
           - yamllint
           - ansible-lint
+      become: false
 
     - name: Install pre-commit
       pip:
         name: pre-commit
 
-    - name: Install snapd
-      apt:
-        name: snapd
-        state: present
-
-#    - name: Install microk8s
-#      community.general.snap:
-#        name: microk8s
-#        classic: yes
-
-#    - name: Check out my favourite repos
     - name: Check out moosefs-playbook
       git:
         repo: git@github.com:Zorlin/moosefs-playbook.git
-        dest: /home/wings/projects/moosefs-playbook
+        dest: /Users/wings/projects/moosefs-playbook
       become: false
 
     - name: Check out ansible-role-moosefs
       git:
         repo: git@github.com:Zorlin/ansible-role-moosefs.git
-        dest: /home/wings/projects/ansible-role-moosefs
+        dest: /Users/wings/projects/ansible-role-moosefs
+      become: false
+
+    - name: Check out slurm-playbook
+      git:
+        repo: git@github.com:Zorlin/slurm-playbook.git
+        dest: /Users/wings/projects/slurm-playbook
+      become: false
+
+    - name: Check out ansible-role-slurm
+      git:
+        repo: git@github.com:Zorlin/ansible-role-slurm.git
+        dest: /Users/wings/projects/ansible-role-slurm
       become: false
 
     - name: Check out upload-toolkit
       git:
         repo: git@github.com:riffcc/upload-toolkit.git
-        dest: /home/wings/projects/upload-toolkit
+        dest: /Users/wings/projects/upload-toolkit
       become: false
-
-    - name: Install Steam
-      apt:
-        deb: https://cdn.akamai.steamstatic.com/client/installer/steam.deb
-
-    - name: Install qBitTorrent repo
-      apt_repository:
-        repo: ppa:qbittorrent-team/qbittorrent-stable
-
-
-    - name: Install qBitTorrent
-      apt:
-        name: qbittorrent
 
 #    - name: Install Chia
 #    - name: Install Sia
