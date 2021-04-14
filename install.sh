@@ -1,6 +1,8 @@
 #!/bin/bash
 # Upgrade pip3
 sudo pip3 install --upgrade pip
+# Enable ssh
+sudo systemsetup -setremotelogin on
 # Install Homebrew, but only if needed
 brew --help || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # Activate Homebrew
