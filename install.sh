@@ -1,4 +1,6 @@
 #!/bin/bash
+# Upgrade pip3
+sudo pip3 install --upgrade pip
 # Install Homebrew, but only if needed
 brew --help || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # Activate Homebrew
@@ -55,8 +57,6 @@ dockutil --remove Numbers
 dockutil --remove Pages
 dockutil --remove "App Store"
 dockutil --remove "System Preferences"
-# Add the icons we do like
-dockutil --add Terminal
 # Install some final utilities
 brew install --cask microsoft-edge
 brew install mas
@@ -68,3 +68,5 @@ brew install --cask discord
 brew install --cask steam
 brew install --cask alfred
 mas install 1352778147
+# Add the icons we do like
+dockutil --add iTerm
