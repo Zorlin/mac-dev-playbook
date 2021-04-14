@@ -59,5 +59,12 @@ dockutil --remove "System Preferences"
 dockutil --add Terminal
 # Install some final utilities
 brew install --cask microsoft-edge
+brew install mas
+brew install --cask slack
 brew install --cask iterm2
+brew install --cask signal
+brew install --cask element
+brew install --cask discord
+brew install --cask steam
 brew install --cask alfred
+mas install 1352778147
