@@ -28,9 +28,10 @@ sudo -H pip3 install ansible molecule wget
 #sudo mkdir -p /opt/mitogen
 #sudo bsdtar --strip-components=1 -xvf /opt/v0.3.0-rc.0.zip -C /opt/mitogen
 # Generate a pubkey
-echo TODO - keypair
+# TODO only do this if one does not exist
+ssh-keygen -b 4096 -f ~/.ssh/id_rsa -N '' -t rsa -C ''
 # Add our pubkey
-ssh-add wings@localhost
+ssh-copy-id wings@localhost
 # Scan the local key
 ssh-keyscan -H localhost >> ~/.ssh/known_hosts
 # Grab the Ansible collections and roles
