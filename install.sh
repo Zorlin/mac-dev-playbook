@@ -63,6 +63,7 @@ dockutil --remove "System Preferences"
 # Install some final utilities
 brew install --cask microsoft-edge
 brew install mas
+brew install --cask dbeaver-community
 brew install --cask slack
 brew install --cask iterm2
 brew install --cask signal

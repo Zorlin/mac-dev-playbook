@@ -14,7 +14,7 @@
 
   tasks:
     - name: Install common utilities
-      package:
+      community.general.homebrew:
         name:
           - screen
           - wget
@@ -36,7 +36,7 @@
         name: molecule
 
     - name: Install yamllint and ansible-lint
-      package:
+      community.general.homebrew:
         name:
           - yamllint
           - ansible-lint
