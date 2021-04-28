@@ -63,6 +63,8 @@ dockutil --remove "System Preferences"
 # Install some final utilities
 brew install --cask microsoft-edge
 brew install mas
+brew tap shivammathur/php
+brew install shivammathur/php/php@8.0
 brew install --cask dbeaver-community
 brew install --cask slack
 brew install --cask iterm2
@@ -71,6 +73,11 @@ brew install --cask element
 brew install --cask discord
 brew install --cask steam
 brew install --cask alfred
+brew install --cask quassel
+brew install --cask telegram
+brew install --cask skype
 mas install 1352778147
+# Install a newer nano for soft wrapping
+brew install nano
 # Add the icons we do like
 dockutil --add iTerm
