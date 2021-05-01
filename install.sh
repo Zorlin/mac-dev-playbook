@@ -76,6 +76,7 @@ brew install --cask alfred
 brew install --cask quassel
 brew install --cask telegram
 brew install --cask skype
+brew install --cask vlc
 mas install 1352778147
 # Install a newer nano for soft wrapping
 brew install nano
