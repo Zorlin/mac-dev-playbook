@@ -8,7 +8,10 @@ brew --help || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Home
 # Activate Homebrew
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
-eval "$(/opt/homebrew/bin/brew shellenv)"
+echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.zprofile
+echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.zshrc
+echo '[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm' >> ~/.zshrc
+echo '[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion' >> ~/.zhsrc
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --profile default --default-toolchain nightly -y
 # Activate Rust
@@ -39,8 +42,7 @@ ansible-galaxy install -r roles/requirements.yml
 # Remove Dock icons
 #dockutil --remove
 # List Launchpad apps (not dock!)
-#sqlite3 "/private/var/folders/yr/r3xnqxgn6ng34m_h1pz668xw0000gn/0/com.apple.dock.launchpad/db/db" "SELECT * FROM apps;"
-# Delete the Dock icons that we don't like
+#sqlite3 "/private/var/folders/yr/r3xnqxgn6ng34m_h1pz668xw0000gn/0/com.apple.dock.launchpad/db/db" "SELECT * FROM apps;"# Delete the Dock icons that we don't like
 dockutil --remove Launchpad
 dockutil --remove Mail
 dockutil --remove Messages
@@ -61,6 +63,7 @@ dockutil --remove Pages
 dockutil --remove "App Store"
 dockutil --remove "System Preferences"
 # Install some final utilities
+brew install nvm
 brew install --cask microsoft-edge
 brew install mas
 brew tap shivammathur/php
@@ -78,6 +81,7 @@ brew install --cask telegram
 brew install --cask skype
 brew install --cask vlc
 brew install nmap
+
 mas install 1352778147
 # Install a newer nano for soft wrapping
 brew install nano
