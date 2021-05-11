@@ -28,7 +28,7 @@ echo '[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebr
 brew install wget dockutil
 
 # Install Ansible and other tools
-sudo -H pip3 install ansible molecule wget
+sudo -H pip3 install ansible molecule wget pre-commit
 
 ### SSH setup ###
 # Generate a pubkey
