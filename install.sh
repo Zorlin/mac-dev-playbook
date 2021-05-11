@@ -1,4 +1,6 @@
 #!/bin/bash
+# Set up Git configuration
+./git-config.sh
 # Upgrade pip3
 sudo pip3 install --upgrade pip
 # Enable ssh
