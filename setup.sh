@@ -50,6 +50,7 @@ alfred quassel telegram \
 skype vlc
 # Install normal utils via normal packages
 brew install nmap docker-compose nano \
+postgresql ffmpeg \
 mas shivammathur/php/php@8.0 nvm
 # Install via tap
 brew tap shivammathur/php
@@ -70,3 +71,6 @@ Numbers Pages "App Store" \
 "System Preferences"; do
 echo dockutil --remove $icon
 done
+
+### final cleanup ###
+brew link openssl

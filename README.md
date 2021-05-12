@@ -7,3 +7,6 @@ Hugely inspired by https://github.com/geerlingguy/mac-dev-playbook and will use 
 * Run `setup.sh`, sip coffee
 * `ansible-playbook site.yml`, sip more coffee
 * Breathe a sigh of relief unless something went wrong
+
+## Post-installation
+* Install PostgreSQL using the automated installer
