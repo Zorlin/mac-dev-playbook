@@ -47,10 +47,10 @@ brew install --cask cyberduck microsoft-edge dbeaver-community \
 slack iterm2 signal \
 element discord steam \
 alfred quassel telegram \
-skype vlc
+skype vlc zenmap
 # Install normal utils via normal packages
 brew install nmap docker-compose nano \
-postgresql ffmpeg \
+postgresql ffmpeg telnet \
 mas shivammathur/php/php@8.0 nvm
 # Install via tap
 brew tap shivammathur/php
