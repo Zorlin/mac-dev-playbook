@@ -47,7 +47,8 @@ brew install --cask cyberduck microsoft-edge dbeaver-community \
 slack iterm2 signal \
 element discord steam \
 alfred quassel telegram \
-skype vlc zenmap
+skype vlc zenmap wireshark \
+android-platform-tools
 # Install normal utils via normal packages
 brew install nmap docker-compose nano \
 postgresql ffmpeg telnet \
